@@ -1,0 +1,27 @@
+.PostInformation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  align-items: center;
+  .settingPost {
+    svg {
+      margin: 0 10px 0 10px;
+      width: 25px;
+      height: 25px;
+      color: rgb(146, 208, 240);
+    }
+  }
+  .contactWithPost {
+    svg {
+      margin: 0 10px 0 15px;
+      width: 25px;
+      height: 25px;
+      color: gray;
+    }
+  }
+  .postCreateTime {
+    p {
+      margin: 0;
+    }
+  }
+}
