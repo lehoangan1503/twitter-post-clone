@@ -4,12 +4,12 @@ import PostContent from "./PostContent/PostContent";
 import PostInformation from "./PostInformation/PostInformation";
 import "../../../style/Post.scss";
 
-const Post = () => {
+const Post = ({ post: { user, postContent, time } }) => {
   return (
     <div className="Post">
-      <AuthorPostInformation></AuthorPostInformation>
-      <PostContent></PostContent>
-      <PostInformation></PostInformation>
+      <AuthorPostInformation author={user}></AuthorPostInformation>
+      <PostContent postContent={postContent}></PostContent>
+      <PostInformation createTime={time}></PostInformation>
     </div>
   );
 };

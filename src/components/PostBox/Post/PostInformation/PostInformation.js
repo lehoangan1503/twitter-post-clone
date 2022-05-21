@@ -7,7 +7,7 @@ import {
   FaRegHeart,
   FaRetweet,
 } from "react-icons/fa";
-const PostInformation = () => {
+const PostInformation = ({ createTime }) => {
   return (
     <div className="PostInformation">
       <div className="settingPost">
@@ -20,7 +20,7 @@ const PostInformation = () => {
         <FaRetweet></FaRetweet>
       </div>
       <div className="postCreateTime">
-        <p>May 20, 2022 21:32 pm</p>
+        <p>{createTime}</p>
       </div>
     </div>
   );

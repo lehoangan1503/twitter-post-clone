@@ -1,16 +1,25 @@
 import React from "react";
 import { MdAccountCircle } from "react-icons/md";
 import "../../../../style/AuthorPostInformation.scss";
-const AuthorPostInformation = () => {
+const AuthorPostInformation = ({
+  author: { firstName, lastName, avatarUrl },
+}) => {
+  console.log(avatarUrl === "");
   return (
     <div className="AuthorPostInformation">
       <div className="authorAvatar">
-        <MdAccountCircle></MdAccountCircle>
+        {avatarUrl !== "" ? (
+          <img src={avatarUrl} alt="" />
+        ) : (
+          <MdAccountCircle></MdAccountCircle>
+        )}
       </div>
       <div className="authorName">
-        <p>An Le Hoang </p>
+        <p>
+          {firstName} {lastName}{" "}
+        </p>
       </div>
-      <span>@An</span>
+      <span>@{firstName}</span>
     </div>
   );
 };

@@ -1,14 +1,9 @@
 import React from "react";
 import "../../../../style/PostContent.scss";
-const PostContent = () => {
+const PostContent = ({ postContent }) => {
   return (
     <div className="PostContent">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-        tempore, tenetur accusamus nulla quisquam inventore maxime amet eaque,
-        at, beatae exercitationem sequi voluptates laudantium totam porro vero
-        molestias ipsum ad?
-      </p>
+      <p>{postContent}</p>
     </div>
   );
 };
