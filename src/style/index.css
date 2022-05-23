@@ -4,6 +4,7 @@
 html {
   box-sizing: border-box;
   font-size: 18px;
+  
 }
 body {
   background-color: rgb(249, 251, 254);
@@ -20,6 +21,7 @@ body {
 :root {
   --font-heading: "Roboto Slab";
   --font-body: "Poppins";
+  --blue-button-color: rgb(29, 161, 242);
 }
 ::-webkit-scrollbar {
   width: 15px;

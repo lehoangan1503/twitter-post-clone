@@ -4,7 +4,6 @@ import "../../../../style/AuthorPostInformation.scss";
 const AuthorPostInformation = ({
   author: { firstName, lastName, avatarUrl },
 }) => {
-  console.log(avatarUrl === "");
   return (
     <div className="AuthorPostInformation">
       <div className="authorAvatar">

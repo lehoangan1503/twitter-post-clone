@@ -7,17 +7,23 @@ import {
   FaRegHeart,
   FaRetweet,
 } from "react-icons/fa";
-const PostInformation = ({ createTime }) => {
+const PostInformation = ({ createTime, onClick }) => {
+  const handleClick = (e) => {
+    const { name } = e.target;
+    onClick(name);
+  };
   return (
     <div className="PostInformation">
       <div className="settingPost">
-        <FaRegEdit></FaRegEdit>
-        <FaRegTrashAlt></FaRegTrashAlt>
+        <button name="editPostButton" onClick={handleClick}>
+          <FaRegEdit id="editPostButton"></FaRegEdit>
+        </button>
+        <FaRegTrashAlt id="deletePostButton"></FaRegTrashAlt>
       </div>
       <div className="contactWithPost">
-        <FaRegComment></FaRegComment>
-        <FaRegHeart></FaRegHeart>
-        <FaRetweet></FaRetweet>
+        <FaRegComment id="commentPostButton"></FaRegComment>
+        <FaRegHeart id="reactPostButton"></FaRegHeart>
+        <FaRetweet id="resetPostButton"></FaRetweet>
       </div>
       <div className="postCreateTime">
         <p>{createTime}</p>

@@ -1,7 +1,7 @@
 import React from "react";
 import "../../style/UserInputComment.scss";
 import styled from "styled-components";
-
+import TextareaContent from "../TextareaContent/TextareaContent";
 const ActiveButton = styled.input.attrs({ type: "submit", value: "Add Post" })`
   font-size: 1rem;
   font-family: inherit;
@@ -12,6 +12,9 @@ const ActiveButton = styled.input.attrs({ type: "submit", value: "Add Post" })`
   border: none;
   background-color: rgb(29, 161, 242);
   color: rgba(249, 251, 254, 1);
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const Container = styled.div`
   width: 20%;
@@ -35,15 +38,10 @@ const UserInputComment = ({ inputValue, onChange, actived, onSubmit }) => {
     <div className="UserInputComment">
       <form onSubmit={handleSubmit}>
         <div className="inputTextContainer">
-          <textarea
-            name="userInputComment"
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Tweet about 30 Days Of React..."
-            value={inputValue}
-            onChange={handleChange}
-          ></textarea>
+          <TextareaContent
+            inputValue={inputValue}
+            handleChange={handleChange}
+          ></TextareaContent>
         </div>
         {actived ? (
           <Container>

@@ -2,6 +2,21 @@ import React, { useState } from "react";
 import "../../style/TwitterPost.scss";
 import PostBox from "../PostBox/PostBox";
 import UserInputComment from "../UserInputComment/UserInputComment";
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 const TwitterPost = () => {
   //state of user input value
   const [inputValue, setInputValue] = useState("");
@@ -9,20 +24,6 @@ const TwitterPost = () => {
     setInputValue(value);
   };
 
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
   // convert date format: month day, year hours:minutes AM/PM
   const dateFormatter = () => {
     const date = new Date();
@@ -32,7 +33,7 @@ const TwitterPost = () => {
     let hours = date.getHours();
     let minutes =
       date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-    
+
     let ampm = hours >= 12 ? "pm" : "am";
     hours = hours === 0 ? 12 : hours;
     let dateStr = `${month} ${day}, ${year} ${hours}:${minutes} ${ampm}`;
@@ -44,6 +45,7 @@ const TwitterPost = () => {
       postContent:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis tempore, tenetur accusamus nulla quisquam inventore maxime amet eaque, at, beatae exercitationem sequi voluptates laudantium totam porro vero molestias ipsum ad?",
       time: "May 20, 2022 21:32 pm",
+      postId: new Date().getTime(),
     },
   ];
   //state for list of post
@@ -54,6 +56,7 @@ const TwitterPost = () => {
       user: { firstName: "An", lastName: "Le Hoang", avatarUrl: "" },
       postContent: inputValue,
       time: dateFormatter(),
+      postId: new Date().getTime(),
     };
     setInputValue("");
     setPostList([post, ...postList]);

@@ -3,12 +3,30 @@
   justify-content: space-between;
   margin-top: 15px;
   align-items: center;
+  button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    &:hover {
+      svg#editPostButton {
+        color: var(--blue-button-color);
+      }
+    }
+  }
   .settingPost {
     svg {
       margin: 0 10px 0 10px;
       width: 25px;
       height: 25px;
       color: rgb(146, 208, 240);
+      pointer-events: none;
+    }
+
+    svg#deletePostButton {
+      &:hover {
+        cursor: pointer;
+        color: #c73e3e;
+      }
     }
   }
   .contactWithPost {
@@ -17,6 +35,24 @@
       width: 25px;
       height: 25px;
       color: gray;
+    }
+    svg#commentPostButton {
+      &:hover {
+        cursor: pointer;
+        color: var(--blue-button-color);
+      }
+    }
+    svg#reactPostButton {
+      &:hover {
+        cursor: pointer;
+        color: #c73e3e;
+      }
+    }
+    svg#resetPostButton {
+      &:hover {
+        cursor: pointer;
+        color: #3ec750;
+      }
     }
   }
   .postCreateTime {

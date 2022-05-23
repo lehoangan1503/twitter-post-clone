@@ -4,5 +4,31 @@
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
-  letter-spacing: 1.25px;
+  .editButtonGroup {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+
+    #saveChangedPost {
+      width: 60px;
+      padding: 8px;
+      color: white;
+      background-color: var(--blue-button-color);
+      border-radius: 3px;
+      border: none;
+      font-family: var(--font-heading);
+      font-weight: 600;
+    }
+    #cancelEditPost {
+      width: 60px;
+      padding: 8px;
+      color: white;
+      background-color: gray;
+      border-radius: 3px;
+      border: none;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+  }
 }
