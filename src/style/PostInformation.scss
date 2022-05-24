@@ -11,6 +11,21 @@
       svg#editPostButton {
         color: var(--blue-button-color);
       }
+      svg#deletePostButton {
+        color: #c73e3e;
+      }
+      svg#reactPostButton {
+        cursor: pointer;
+        color: #c73e3e;
+      }
+      svg#commentPostButton {
+        cursor: pointer;
+        color: var(--blue-button-color);
+      }
+      svg#resetPostButton {
+        cursor: pointer;
+        color: #3ec750;
+      }
     }
   }
   .settingPost {
@@ -21,13 +36,6 @@
       color: rgb(146, 208, 240);
       pointer-events: none;
     }
-
-    svg#deletePostButton {
-      &:hover {
-        cursor: pointer;
-        color: #c73e3e;
-      }
-    }
   }
   .contactWithPost {
     svg {
@@ -35,23 +43,9 @@
       width: 25px;
       height: 25px;
       color: gray;
-    }
-    svg#commentPostButton {
-      &:hover {
-        cursor: pointer;
-        color: var(--blue-button-color);
-      }
-    }
-    svg#reactPostButton {
-      &:hover {
-        cursor: pointer;
+      pointer-events: none;
+      &#reactActivedPostButton {
         color: #c73e3e;
-      }
-    }
-    svg#resetPostButton {
-      &:hover {
-        cursor: pointer;
-        color: #3ec750;
       }
     }
   }

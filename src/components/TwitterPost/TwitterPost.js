@@ -66,6 +66,14 @@ const TwitterPost = () => {
       inputValue.length !== 0 && inputValue.length <= 250 ? true : false;
     return actived;
   };
+  const handleDeletePost = (postId) => {
+    postList.forEach((post, index) => {
+      if (post.postId === postId) {
+        postList.splice(index, 1);
+      }
+    });
+    setPostList([...postList]);
+  };
   return (
     <div className="TwitterPost">
       <UserInputComment
@@ -74,7 +82,7 @@ const TwitterPost = () => {
         actived={activedTest()}
         onSubmit={handleSubmit}
       ></UserInputComment>
-      <PostBox postList={postList}></PostBox>
+      <PostBox postList={postList} deletePost={handleDeletePost}></PostBox>
     </div>
   );
 };

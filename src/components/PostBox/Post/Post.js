@@ -5,17 +5,21 @@ import PostInformation from "./PostInformation/PostInformation";
 import TextareaContent from "../../TextareaContent/TextareaContent";
 import "../../../style/Post.scss";
 
-const Post = ({ post: { user, postContent, time }, editPostContent }) => {
+const Post = ({ post: { user, postContent, time, postId }, deletePost }) => {
   const [editPostActive, setEditPostActive] = useState(false);
   const innitialContent = postContent;
   const [editContent, setEditContent] = useState(innitialContent);
   const [backupContentBeforeEdit, setBackupContentBeforeEdit] =
     useState(editContent);
+  // handle edit button will callback by PostInformation child
+  const handleClick = () => {
+    setEditPostActive(!editPostActive);
+  };
 
-  const handleClick = (name) => {
-    if (name === "editPostButton") {
-      setEditPostActive(!editPostActive);
-    }
+  // handle delete event will callback by PostInformation child
+  const handleDeletePost = () => {
+   
+    deletePost(postId);
   };
   const handleChange = (e) => {
     const { value } = e.target;
@@ -24,9 +28,7 @@ const Post = ({ post: { user, postContent, time }, editPostContent }) => {
 
   const handleOnClick = (e) => {
     const { name } = e.target;
-    if (name === "editPostButton") {
-      setEditPostActive(!editPostActive);
-    }
+
     if (name === "cancelEditPost") {
       setEditContent(backupContentBeforeEdit);
 
@@ -69,6 +71,7 @@ const Post = ({ post: { user, postContent, time }, editPostContent }) => {
           <PostInformation
             onClick={handleClick}
             createTime={time}
+            handleDeletePost={handleDeletePost}
           ></PostInformation>
         </Fragment>
       )}
