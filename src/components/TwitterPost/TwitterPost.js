@@ -41,9 +41,9 @@ const TwitterPost = () => {
   };
   const initialPostListState = [
     {
-      user: { firstName: "Anonymous", lastName: "User", avatarUrl: "" },
+      user: { firstName: "An", lastName: "Le", avatarUrl: "" },
       postContent:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis tempore, tenetur accusamus nulla quisquam inventore maxime amet eaque, at, beatae exercitationem sequi voluptates laudantium totam porro vero molestias ipsum ad?",
+        "I'm strong with: HTML, CSS, JavaScript, Reactjs,Node.js, MongoDb, MySQL, Git. Thanks for reading my profile, looking forward to working with you!",
       time: "May 20, 2022 21:32 pm",
       postId: new Date().getTime(),
     },

@@ -27,10 +27,7 @@ const TooLongInput = styled.p`
 `;
 
 const UserInputComment = ({ inputValue, onChange, actived, onSubmit }) => {
-  const handleChange = (e) => {
-    const { value } = e.target;
-    onChange(value);
-  };
+ 
   const handleSubmit = (e) => {
     onSubmit(e);
   };
@@ -40,7 +37,7 @@ const UserInputComment = ({ inputValue, onChange, actived, onSubmit }) => {
         <div className="inputTextContainer">
           <TextareaContent
             inputValue={inputValue}
-            handleChange={handleChange}
+            handleChange={onChange}
           ></TextareaContent>
         </div>
         {actived ? (

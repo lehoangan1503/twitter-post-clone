@@ -12,9 +12,6 @@ const PostInformation = ({ createTime, onClick, handleDeletePost }) => {
   const [reactActive, setReactActive] = useState(false);
   const handleClick = (e) => {
     const { name } = e.target;
-    if (name === "editPostButton") {
-      onClick();
-    }
     if (name === "deletePostButton") {
       handleDeletePost();
     }
@@ -22,11 +19,11 @@ const PostInformation = ({ createTime, onClick, handleDeletePost }) => {
       setReactActive(!reactActive);
     }
   };
-  console.log(reactActive);
+
   return (
     <div className="PostInformation">
       <div className="settingPost">
-        <button name="editPostButton" onClick={handleClick}>
+        <button name="editPostButton" onClick={onClick}>
           <FaRegEdit id="editPostButton"></FaRegEdit>
         </button>
         <button name="deletePostButton" onClick={handleClick}>

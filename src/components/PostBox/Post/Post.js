@@ -18,11 +18,9 @@ const Post = ({ post: { user, postContent, time, postId }, deletePost }) => {
 
   // handle delete event will callback by PostInformation child
   const handleDeletePost = () => {
-   
     deletePost(postId);
   };
-  const handleChange = (e) => {
-    const { value } = e.target;
+  const handleChange = (value) => {
     setEditContent(value);
   };
 
